@@ -96,6 +96,20 @@ label {
   cursor: pointer;
   text-align: center;
 }
+.input[type="radio"] {
+  margin-right: 5px;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
 
 .input-container>i:hover, a[role="button"]:hover {
   color: #777;
