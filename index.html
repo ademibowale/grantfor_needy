@@ -316,6 +316,11 @@
                    <label>
                     <input type="checkbox" checked="checked" name="same adr"> Shipping address same as billing
                   </label>
+                   <form action="/upload" method="post" enctype="multipart/form-data"> 
+                    <label for="image">Select an image:</label>
+                    <input type="file" id="image" name="image" required>
+                    <button type="submit">Upload</button>
+                  </form>
                    <button id="PayButton" class="btn btn-block btn-success submit-button" type="submit" name=" Shipping address">
                     <span class="submit-button-lock"></span>
                     <span class="align-middle">Submit Form</span>

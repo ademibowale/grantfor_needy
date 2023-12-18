@@ -2,6 +2,7 @@ const menu = document.querySelector('.menu');
 const navList = document.querySelector('.nav-list');
 const closeMenu = document.querySelector('.bi-x-lg');
 
+
 const toggle = () => {
   navList.classList.toggle('hide');
   document.body.classList.toggle('no-scroll');
@@ -126,3 +127,63 @@ function onVideoPlay() {
 
 // Event listener for the 'play' event on the video
 document.getElementById('myVideo').addEventListener('play', onVideoPlay);
+
+
+const form = document.querySelector('#my-form');
+const email = document.querySelector('#email');
+const errorMsg = document.querySelector('#error');
+function handleSubmit(e) {
+  e.preventDefault();
+  const regex = /[A-Z]/g;
+  const userEmail = email.value;
+  if (userEmail.match(regex)) {
+    errorMsg.innerHTML = 'Email should be in lower case';
+  } else {
+    errorMsg.remove();
+    form.submit();
+  }
+}
+
+
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const file = document.getElementById('image').files[0];
+
+  // Send the file to the server using Axios or Fetch API
+
+  // Upon successful upload, handle response and display message or update page
+});
+
+const formData = new FormData();
+formData.append('file', document.getElementById('image').files[0]);
+
+axios.post('/upload', formData, {
+  headers: {
+    'Content-Type': 'multipart/form-data',
+  },
+})
+.then((response) => {
+  // Handle successful upload: e.g., display message, update UI
+})
+.catch((error) => {
+  // Handle upload error
+
+  if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
+    $fileName = $_FILES['image']['name'];
+    $tempFileName = $_FILES['image']['tmp_name'];
+    $targetPath = "uploads/" . $fileName; // Define your upload location
+  
+    if (move_uploaded_file($tempFileName, $targetPath)) {
+      $imageUrl = "http://yourdomain.com/uploads/" . $fileName; // Generate URL
+  
+      // Respond to the client with the URL or success message
+    } else {
+      // Handle upload error
+    }
+  }
+
+
+});
+
